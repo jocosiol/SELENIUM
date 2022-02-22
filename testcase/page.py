@@ -10,6 +10,9 @@ class BasePage(object):
         self.driver = driver
     
 class MainPage(BasePage):
+
+    search_text_element = SearchTextElement()
+
     def is_title_matches(self):
         return "Python" in self.driver.title
     
@@ -18,5 +21,5 @@ class MainPage(BasePage):
         element.click() 
 
 class SearchResultsPage(BasePage):
-    def is_results_fond(self):
+    def is_results_found(self):
         return "No restults found." not in self.driver.page_source
